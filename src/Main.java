@@ -13,26 +13,30 @@ public class Main {
     SettingOs(yearPone, oS);
 
     System.out.println("task3");
-    int kmDistanse = 95;
+    int kmDistanse = 180;
     deleveryDays(kmDistanse);
     int vremaDostavki = deleveryDays(kmDistanse);
-    System.out.println("vremaDostavki = " + vremaDostavki + " Days");
-
+    if (vremaDostavki == 4) {
+      System.out.println("извините, доставка не осуществляется");
+    } else {
+      System.out.println("vremaDostavki = " + vremaDostavki + " Days");
+    }
   }
 
   public static int deleveryDays(int kmDistanse) {
     int deliveryDistance = kmDistanse;
     int deleveryTimes = 1;
     if (deliveryDistance < 20) {
-      System.out.println("Срок доставки : " + deleveryTimes + " день");
+      //System.out.println("Срок доставки : " + deleveryTimes + " день");
     } else if (deliveryDistance >= 20 && deliveryDistance < 60) {
-      //System.out.println("Срок доставки : " + (e + 1) + " дня");
+      //System.out.println("Срок доставки : " + (deleveryTimes + 1) + " дня");
       deleveryTimes = deleveryTimes + 1;
     } else if (deliveryDistance >= 60 && deliveryDistance <= 100) {
-      //System.out.println("Срок доставки : " + (e + 2) + " дня");
+      //System.out.println("Срок доставки : " + (deleveryTimes + 2) + " дня");
       deleveryTimes = deleveryTimes + 2;
     } else {
-      System.out.println("извините, доставка не осуществляется");
+     // System.out.println("извините, доставка не осуществляется");
+      deleveryTimes = deleveryTimes + 3;
     }
     return deleveryTimes;
   }
