@@ -5,7 +5,7 @@ public class Main {
   public static void main(String[] args) {
     System.out.println("task1");
     int yearV = 2024;
-    visokosYear(yearV);
+    checkLeapYear(yearV);
 
     System.out.println("task2");
     int yearPone = 2020;
@@ -14,22 +14,27 @@ public class Main {
 
     System.out.println("task3");
     int kmDistanse = 95;
-    deleveryDay(kmDistanse);
+    deleveryDays(kmDistanse);
+    int vremaDostavki = deleveryDays(kmDistanse);
+    System.out.println("vremaDostavki = " + vremaDostavki + " Days");
 
   }
 
-  public static void deleveryDay(int kmDistanse) {
+  public static int deleveryDays(int kmDistanse) {
     int deliveryDistance = kmDistanse;
-    int delyveryTimes = 1;
+    int deleveryTimes = 1;
     if (deliveryDistance < 20) {
-      System.out.println("Срок доставки : " + delyveryTimes + " день");
+      System.out.println("Срок доставки : " + deleveryTimes + " день");
     } else if (deliveryDistance >= 20 && deliveryDistance < 60) {
-      System.out.println("Срок доставки : " + (delyveryTimes + 1) + " дня");
+      //System.out.println("Срок доставки : " + (e + 1) + " дня");
+      deleveryTimes = deleveryTimes + 1;
     } else if (deliveryDistance >= 60 && deliveryDistance <= 100) {
-      System.out.println("Срок доставки : " + (delyveryTimes + 2) + " дня");
+      //System.out.println("Срок доставки : " + (e + 2) + " дня");
+      deleveryTimes = deleveryTimes + 2;
     } else {
       System.out.println("извините, доставка не осуществляется");
     }
+    return deleveryTimes;
   }
 
 
@@ -58,7 +63,7 @@ public class Main {
     }
   }
 
-  public static void visokosYear(int yearV) {
+  public static void checkLeapYear(int yearV) {
     int ferstVisokosYear = 1584;
     int year = yearV;
     if (year < ferstVisokosYear) {
