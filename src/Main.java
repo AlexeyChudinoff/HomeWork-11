@@ -14,11 +14,11 @@ public class Main {
 
     System.out.println("task3");
     int kmDistanse = 95;
-    dayDelevery(kmDistanse);
+    deleveryDay(kmDistanse);
 
   }
 
-  public static void dayDelevery (int kmDistanse) {
+  public static void deleveryDay(int kmDistanse) {
     int deliveryDistance = kmDistanse;
     int delyveryTimes = 1;
     if (deliveryDistance < 20) {
